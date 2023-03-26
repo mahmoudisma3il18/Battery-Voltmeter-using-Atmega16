@@ -10,7 +10,6 @@
 #define ADC_H_
 
 /*------------------------- Includes ---------------------------*/
-#include <stdint-gcc.h>
 #include <avr/io.h>
 #include "common_macros.h"
 
@@ -44,7 +43,7 @@ typedef enum {
 	Channel5_ID,
 	Channel6_ID,
 	Channel7_ID
-	}ADC_Channel_ID;
+	}ADC_ChannelID;
 	
 	
 typedef struct{
@@ -52,7 +51,7 @@ typedef struct{
 	ADC_Prescaler prescaler;
 }ADC_ConfigType;	
 	
-/*-------------------------------------- Function Prototypes ---------------------------------------*/
+/*-------------------------------------- Function Decelerations ---------------------------------------*/
 
 /*
 Description : Initializes ADC
@@ -64,7 +63,7 @@ void ADC_init(const ADC_ConfigType *config_ptr );
 Description : Reads value from chosen channel
 */
 
-uint16_t ADC_readChannel(ADC_Channel_ID channel_id);
+uint16_t ADC_readChannel(ADC_ChannelID channel_id);
 
 		
 

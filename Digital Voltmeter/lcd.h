@@ -1,7 +1,7 @@
 /*
  * lcd.h
  *
- * Created: 10/17/2022 5:16:15 PM
+ * Created: 25/3/2023 5:16:15 PM
  *  Author: Mahmoud Ismail
  */ 
 
@@ -12,7 +12,6 @@
 /*------------------------------------ Includes --------------------------------------------------*/
 #include <avr/io.h>
 #include <util/delay.h>
-#include <stdint-gcc.h>
 #include "common_macros.h"
 #include <stdio.h>
 /*---------------------------------------- Definitions ------------------------------------------*/
@@ -27,15 +26,15 @@
 #endif
 
 
-#define LCD_DATA_PORT_DIR           DDRC
-#define LCD_DATA_PORT_OUT           PORTC
+#define LCD_DATA_PORT_DIR           DDRB
+#define LCD_DATA_PORT_OUT           PORTB
 
-#define LCD_CTRL_PORT_DIR           DDRD
-#define LCD_CTRL_PORT_OUT           PORTD
+#define LCD_CTRL_PORT_DIR           DDRC
+#define LCD_CTRL_PORT_OUT           PORTC
 
-#define RS                          PD0
-#define RW                          PD1
-#define E                           PD2
+#define RS                          PC0
+#define RW                          PC1
+#define E                           PC2
 
 
 #define SET_LCD_ONE_LINE_EIGHT_BIT_MODE         0x30
@@ -66,6 +65,7 @@ void LCD_displayStringRowColumn(uint8_t row,uint8_t col,const uint8_t *String);
 void LCD_clearScreen(void);
 
 void LCD_integrToString(uint32_t data);
+
 
 
 

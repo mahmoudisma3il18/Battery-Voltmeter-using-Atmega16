@@ -1,7 +1,7 @@
 /*
  * lcd.c
  *
- * Created: 10/17/2022 5:16:24 PM
+ * Created: 25/3/2023 5:16:24 PM
  *  Author: Mahmoud Ismail
  */ 
 #include "lcd.h"
@@ -151,3 +151,4 @@ void LCD_integrToString(uint32_t data)
 	sprintf(buffer,"%d",data);
 	LCD_displayString(buffer);
 }
+

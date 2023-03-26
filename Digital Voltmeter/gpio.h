@@ -1,7 +1,7 @@
 /*
  * gpio.h
  *
- * Created: 10/16/2022 2:03:00 PM
+ * Created: 25/3/2023 2:03:00 PM
  *  Author: Mahmoud Ismail
  */ 
 
@@ -25,9 +25,9 @@
 #define PIN6_ID    0x06
 #define PIN7_ID    0x07
 
-#define PORTA_ID  0x00
-#define PORTB_ID  0x01
-#define PORTC_ID  0x02
+
+#define PORTB_ID  0x00
+#define PORTC_ID  0x01
 #define PORTD_ID  0x03  
 
 

@@ -19,7 +19,7 @@ void ADC_init(const ADC_ConfigType *config_ptr ) {
 
 }
 
-uint16_t ADC_readChannel(ADC_Channel_ID channel_id) {
+uint16_t ADC_readChannel(ADC_ChannelID channel_id) {
 
 	uint16_t retValue = 0;
 	

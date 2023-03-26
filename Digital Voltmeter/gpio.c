@@ -1,7 +1,7 @@
 /*
 * gpio.c
 *
-* Created: 10/16/2022 2:01:44 PM
+* Created: 22/3/2023 2:01:44 PM
 *  Author: Mahmoud Ismail
 */
 
@@ -13,12 +13,6 @@ void GPIO_setupPinDirection(uint8_t port_num,uint8_t pin_num , GPIO_PinDirection
 	
 	switch(port_num){
 		
-		case PORTA_ID :
-		if (direction == PIN_INPUT)
-		CLEAR_BIT(DDRA,pin_num);
-		else if (direction == PIN_OUTPUT)
-		SET_BIT(DDRA,pin_num);
-		break;
 		
 		case PORTB_ID :
 		if (direction == PIN_INPUT)
@@ -50,16 +44,6 @@ void GPIO_writePin(uint8_t port_num,uint8_t pin_num,uint8_t value)
 	switch(port_num) 
 	{
 		
-		case PORTA_ID :
-		if (value == LOGIC_HIGH)
-		{
-			SET_BIT(PORTA,pin_num);
-		} 
-		else
-		{
-			CLEAR_BIT(PORTA,pin_num);
-		}
-		break;
 		
 		
 		case PORTB_ID :
@@ -107,16 +91,6 @@ uint8_t GPIO_readPin(uint8_t port_num,uint8_t pin_num)
 	
 	switch(port_num)
 	{
-		case PORTA_ID :
-		if (BIT_IS_SET(PINA,pin_num))
-		{
-			value = LOGIC_HIGH;
-		} 
-		else
-		{
-			value = LOGIC_LOW;
-		}
-		break;
 		
 		case PORTB_ID :
 		if (BIT_IS_SET(PINB,pin_num))
@@ -163,9 +137,6 @@ void GPIO_setupPortDirection(uint8_t port_number,GPIO_PortDirectionType directio
 	switch(port_number)
 	{
 		
-		case PORTA_ID : 
-		DDRA = direction;
-		break;
 		
 		case PORTB_ID :
 		DDRB = direction;
@@ -190,9 +161,6 @@ void GPIO_writePort(uint8_t port_num,uint8_t value)
 	switch(port_num)
 	{
 		
-		case PORTA_ID:
-		PORTA = value;
-		break;
 		
 		case PORTB_ID:
 		PORTB = value;
@@ -216,10 +184,6 @@ uint8_t GPIO_readPort(uint8_t port_num)
 	
 	switch(port_num)
 	{
-		
-		case PORTA_ID : 
-		value = (PINA & 0xFF);
-		break;
 		
 		case PORTB_ID :
 		value = (PINB & 0xFF);
